@@ -1,18 +1,22 @@
 package model;
 
+import java.util.ArrayList;
+
 public abstract class Estudiante {
-    private String identificacion;
-    private String nombre;
-    private String id;
-    private String programa;
-    private String semestre;
-    public Estudiante(String identificacion, String nombre, String programa, String semestre, String id) {
+    protected String identificacion;
+    protected String nombre;
+    protected String id;
+    protected String programa;
+    protected String semestre;
+    protected ArrayList<Materia> ListaMaterias;
+    public Estudiante(String identificacion, ArrayList<Materia> listaMaterias, int semestre, String nombre) {
 
         this.identificacion = identificacion;
         this.nombre = nombre;
         this.programa = programa;
-        this.semestre = semestre;
+        this.semestre = this.semestre;
         this.id = id;
+        this.ListaMaterias = listaMaterias;
     }
 
     public String getIdentificacion() {
