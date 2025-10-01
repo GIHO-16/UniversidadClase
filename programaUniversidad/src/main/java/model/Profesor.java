@@ -1,16 +1,20 @@
 package model;
 
-public abstract class Profesor {
-    private String nombre;
-    private String identificador;
-    private String titulo;
-    private byte añosXP;
+import java.util.ArrayList;
 
-    public Profesor (String nombre, String identificador, String titulo, byte añosXP){
-        this.nombre=nombre;
-        this.identificador=identificador;
-        this.titulo=titulo;
-        this.añosXP= añosXP;
+public abstract class Profesor {
+    protected String nombre;
+    protected String identificador;
+    protected String titulo;
+    protected byte aniosXP;
+    protected ArrayList<Materia>listaMaterias;
+
+    public Profesor(String nombre, String identificador, String titulo, byte aniosXP) {
+        this.nombre = nombre;
+        this.identificador = identificador;
+        this.titulo = titulo;
+        this.aniosXP = aniosXP;
+        this.listaMaterias = new ArrayList<>();
     }
 
     public String getNombre() {
@@ -37,12 +41,21 @@ public abstract class Profesor {
         this.titulo = titulo;
     }
 
-    public byte getAñosXP() {
-        return añosXP;
+    public byte getAniosXP() {
+        return aniosXP;
     }
 
-    public void setAñosXP(byte añosXP) {
-        this.añosXP = añosXP;
+    public void setAniosXP(byte aniosXP) {
+        this.aniosXP = aniosXP;
     }
+
+    public ArrayList<Materia> getListaMaterias() {
+        return listaMaterias;
+    }
+
+    public void setListaMaterias(ArrayList<Materia> listaMaterias) {
+        this.listaMaterias = listaMaterias;
+    }
+
 
 }
