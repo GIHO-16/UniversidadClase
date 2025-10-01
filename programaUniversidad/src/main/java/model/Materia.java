@@ -1,16 +1,24 @@
 package model;
 
-public abstract class Materia {
-    private String codigo;
-    private String nombre;
-    private Double numHoras;
-    private int creditos;
+import java.util.ArrayList;
 
-    public Materia(String codigo, String nombre, Double numHoras, int creditos) {
+public abstract class Materia {
+    protected String codigo;
+    protected String nombre;
+    protected double numHoras;
+    protected int creditos;
+    protected byte semestres;
+    protected Profesor profesor;
+    protected ArrayList<Estudiante> listaEstudiantes;
+
+    public Materia(String codigo, String nombre, double numHoras, int creditos, byte semestres, Profesor profesor){
         this.codigo = codigo;
         this.nombre = nombre;
         this.numHoras = numHoras;
         this.creditos = creditos;
+        this.semestres = semestres;
+        this.profesor = profesor;
+        this.listaEstudiantes = new ArrayList<>();
     }
 
     public String getCodigo() {
@@ -29,11 +37,11 @@ public abstract class Materia {
         this.nombre = nombre;
     }
 
-    public Double getNumHoras() {
+    public double getNumHoras() {
         return numHoras;
     }
 
-    public void setNumHoras(Double numHoras) {
+    public void setNumHoras(double numHoras) {
         this.numHoras = numHoras;
     }
 
@@ -45,16 +53,30 @@ public abstract class Materia {
         this.creditos = creditos;
     }
 
-
-
-    @Override
-    public String toString() {
-        return "Materia{" +
-                "codigo='" + codigo + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", numHoras=" + numHoras +
-                ", creditos=" + creditos +
-                '}';
+    public byte getSemestres() {
+        return semestres;
     }
+
+    public void setSemestres(byte semestres) {
+        this.semestres = semestres;
+    }
+
+    public Profesor getProfesor() {
+        return profesor;
+    }
+
+    public void setProfesor(Profesor profesor) {
+        this.profesor = profesor;
+    }
+
+    public ArrayList<Estudiante> getListaEstudiantes() {
+        return listaEstudiantes;
+    }
+
+    public void setListaEstudiantes(ArrayList<Estudiante> listaEstudiantes) {
+        this.listaEstudiantes = listaEstudiantes;
+    }
+
 }
+
 
