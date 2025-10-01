@@ -4,7 +4,7 @@ public enum TipoCurso {
     MAESTRIA(0),
     DOCTORADO(1);
 
-    private final int codigo;
+        protected final int codigo;
 
     TipoCurso(int codigo) {
         this.codigo = codigo;
